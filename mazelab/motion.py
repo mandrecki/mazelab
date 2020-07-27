@@ -1,13 +1,18 @@
 from collections import namedtuple
 
 
-VonNeumannMotion = namedtuple('VonNeumannMotion', 
-                              ['north', 'south', 'west', 'east'], 
-                              defaults=[[-1, 0], [1, 0], [0, -1], [0, 1]])
+VonNeumannMotionTuple = namedtuple('VonNeumannMotion', 
+                              ['north', 'south', 'west', 'east'])
+
+def VonNeumannMotion():
+    return VonNeumannMotionTuple([-1, 0], [1, 0], [0, -1], [0, 1])
 
 
-MooreMotion = namedtuple('MooreMotion', 
+MooreMotionTuple = namedtuple('MooreMotion', 
                          ['north', 'south', 'west', 'east', 
-                          'northwest', 'northeast', 'southwest', 'southeast'], 
-                         defaults=[[-1, 0], [1, 0], [0, -1], [0, 1], 
-                                   [-1, -1], [-1, 1], [1, -1], [1, 1]])
+                          'northwest', 'northeast', 'southwest', 'southeast'])
+
+def MooreMotion():
+    return MooreMotionTuple([-1, 0], [1, 0], [0, -1], [0, 1], 
+                            [-1, -1], [-1, 1], [1, -1], [1,1])                                   
+                            
